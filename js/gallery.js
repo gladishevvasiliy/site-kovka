@@ -38,6 +38,7 @@ client.getEntries().then((entries) => {
         galleryItem.classList.add("gallery-item");
         img.src = `https:${image.fields.file.url}`;
         img.alt = image.fields.file.fileName;
+        img.className = " lazy";
         galleryItem.appendChild(img);
         column.appendChild(galleryItem);
         columnList.appendChild(column);
