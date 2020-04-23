@@ -15,21 +15,14 @@
 
 .main-title {
   font-weight: 600;
+}
+
+.title {
   margin: 30px 0px 10px 30px;
 }
 
-@media screen and (max-width: 620px) {
-  .main-title {
-    font-size: 24px;
-  }
-}
-
-.main-menu {
-  padding: 0px 17px;
-}
-
-.nav-link {
-  color: #eceff1;
+.email {
+  font-size: 20px;
 }
 
 .contacts {
@@ -39,14 +32,59 @@
   top: 20px;
 }
 
-.email {
-  font-size: 20px;
+@media screen and (max-width: 850px) {
+  .main-title {
+    font-size: 20pt;
+    font-weight: 500;
+  }
+
+  .phone {
+    font-size: 18pt;
+  }
+
+  .email {
+    font-size: 13pt;
+  }
 }
+
+@media screen and (max-width: 620px) {
+  .main-title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .contacts {
+    display: none;
+  }
+}
+
+
+
+
+
+.main-menu {
+  padding: 0px 17px;
+}
+
+.nav-link {
+  color: #eceff1;
+}
+
+
+
 
 /* CONTAINER */
 
 .container {
   margin-top: 20px;
+  min-height: 500px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 720px !important;
+  }
 }
 
 .full-wight-img {
@@ -92,11 +130,14 @@
 
 .gallery-item {
   padding: 10px;
+  min-height: 200px;
+  min-width: 200px;
 }
 .column-list {
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
+  justify-content: center;
 }
 
 .column {
@@ -107,8 +148,35 @@
   position: relative;
 }
 
+@media screen and (max-width: 768px) and (min-width: 500px) {
+  .column {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .column {
+    width: 70%;
+  }
+}
+
 .gallery-item img {
   width: 100%;
+  min-height: 200px;
+  min-width: 200px;
+
   /* width: 150px;
   height: 150px; */
+}
+
+
+.lazy img {
+  opacity: 0.1;
+  will-change: opacity;
+  transition: all 0.3s;
+}
+.loaded img {
+  opacity: 1;
+  min-height: auto;
+  min-width: auto;
 }
